@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-commerce Product Page</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__brand"><a href="#">Deep-Mart</a></div>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle">
+    <label for="nav-toggle" class="nav__hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <ul class="nav__menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Deals</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="#" class="nav__icon" title="Search">
+        <span class="material-icons">search</span>
+      </a>
+            <div class="cart">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </div>
+    
+      <a href="#" class="nav__icon" title="User">
+        <span class="material-icons">person</span>
+      </a>
+    </div>
+  </nav>
+  <script src="navbar.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <main>
+    <section class="controls">
+      <label>
+        Sort by:
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="title-asc">Title: A-Z</option>
+          <option value="title-desc">Title: Z-A</option>
+        </select>
+      </label>
+      <label>
+        Filter category:
+        <select id="categoryFilter">
+          <option value="all">All</option>
+        </select>
+      </label>
+    </section>
+    <section id="products" class="products"></section>
+  </main>
+
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeCart">&times;</span>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <div id="cartTotal"></div>
+      <button id="clearCart">Clear Cart</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Deep-Mart. Powered by Fake Store API.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
